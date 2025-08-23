@@ -30,8 +30,8 @@ Marcelo
 ### **Alunos Contribuintes:**
 
 <div align ="center">
-<a href="https://github.com/18bits-group/P6-Gemini-Chabot/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=18bits-group/P6-Gemini-Chabot" />
+<a href="https://github.com/allanpneves/Koru-Projeto4/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=allanpneves/Koru-Projeto4" />
 </a>
 </div>
 
