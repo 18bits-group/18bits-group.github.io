@@ -4,12 +4,11 @@ import type { Task } from '../types';
 interface ToDoItemProps {
   task: Task;
   toggleComplete: (id: number) => void;
-
   removeTask: (id: number) => void;
-
 }
 
 const ToDoItem: React.FC<ToDoItemProps> = ({ task, toggleComplete, removeTask }) => {
+
   const textClass = task.completed ? 'text-gray-400 line-through' : 'text-gray-800';
   const statusText = task.completed ? 'Concluída' : 'Pendente';
   const statusColor = task.completed ? 'text-green-500' : 'text-yellow-500';
@@ -28,7 +27,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ task, toggleComplete, removeTask })
       <span className={`text-sm font-semibold ml-4 ${statusColor}`}>
         {statusText}
       </span>
-    
+
       <button
         onClick={() => removeTask(task.id)}
         className="ml-4 p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
@@ -37,7 +36,6 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ task, toggleComplete, removeTask })
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-     
     </li>
   );
 };
