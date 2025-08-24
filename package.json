@@ -14,10 +14,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint --fix",
-    "preview": "vite preview",
-    "prepare": "husky"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "lucide-react": "^0.541.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

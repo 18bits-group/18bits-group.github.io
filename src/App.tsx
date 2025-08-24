@@ -1,34 +1,53 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Check } from "lucide-react";
 import "./App.css";
 
+interface Task {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState<Task[]>([
+    { id: 1, text: "Tarefa 3", completed: true },
+    { id: 2, text: "Concluída", completed: true },
+    { id: 3, text: "Essa semana o projeto sai?", completed: false },
+  ]);
+
+  const toggleTask = (id: number) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app">
+      <h1>To Do List</h1>
+
+      <ul className="task-list">
+        {tasks.map((task) => (
+          <li key={task.id} className="task-item">
+            <div className="task-content">
+              <button
+                onClick={() => toggleTask(task.id)}
+                className={`task-checkbox ${task.completed ? "completed" : "pending"}`}
+              >
+                {task.completed && <Check size={16} />}
+              </button>
+
+              <span
+                className={`task-text ${task.completed ? "completed" : "pending"}`}
+              >
+                {task.text}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

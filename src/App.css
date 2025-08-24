@@ -1,42 +1,61 @@
-#root {
-  max-width: 1280px;
+.app {
+  max-width: 500px;
   margin: 0 auto;
   padding: 2rem;
+  color: white;
+  min-height: 100vh;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.task-list {
+  list-style: none;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-item {
+  padding: 1rem;
+  border-bottom: 1px solid #374151;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.card {
-  padding: 2em;
+.task-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #6b7280;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 
-.read-the-docs {
-  color: #888;
+.task-checkbox.pending:hover {
+  border-color: #22c55e;
+}
+
+.task-checkbox.completed {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.task-text {
+  flex: 1;
+  transition: all 0.2s;
+}
+
+.task-text.pending {
+  color: #e5e7eb;
+}
+
+.task-text.completed {
+  color: #6b7280;
+  text-decoration: line-through;
 }
