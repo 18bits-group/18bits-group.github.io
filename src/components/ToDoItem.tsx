@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Task } from '../types';
 
+
 interface ToDoItemProps {
   task: Task;
   toggleComplete: (id: number) => void;
@@ -8,7 +9,6 @@ interface ToDoItemProps {
 }
 
 const ToDoItem: React.FC<ToDoItemProps> = ({ task, toggleComplete, removeTask }) => {
-
   const textClass = task.completed ? 'text-gray-400 line-through' : 'text-gray-800';
   const statusText = task.completed ? 'Concluída' : 'Pendente';
   const statusColor = task.completed ? 'text-green-500' : 'text-yellow-500';
