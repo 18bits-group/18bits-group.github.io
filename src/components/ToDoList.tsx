@@ -9,14 +9,12 @@ interface ToDoListProps {
 }
 
 const ToDoList: React.FC<ToDoListProps> = ({ tasks, toggleComplete, removeTask }) => {
- 
   if (tasks.length === 0) {
     return (
       <p className="text-center text-gray-500 mt-4">Nenhuma tarefa encontrada. Adicione uma nova!</p>
     );
   }
 
-  // Renderiza o array de tarefas
   return (
     <ul className="space-y-3">
       {tasks.map((task) => (

@@ -1,5 +1,6 @@
 import React from 'react';
-import type { Task }   from '../types';
+import type { Task } from '../types';
+
 
 interface ToDoItemProps {
   task: Task;
@@ -26,6 +27,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ task, toggleComplete, removeTask })
       <span className={`text-sm font-semibold ml-4 ${statusColor}`}>
         {statusText}
       </span>
+
       <button
         onClick={() => removeTask(task.id)}
         className="ml-4 p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
